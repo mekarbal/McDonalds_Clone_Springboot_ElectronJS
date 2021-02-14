@@ -1,3 +1,6 @@
+const PDFDocument = require("pdfkit");
+const fs = require("fs");
+
 let params = new URLSearchParams(location.search);
 var productID = params.get("prodId");
 var extraId = params.get("extraId");
@@ -159,20 +162,7 @@ async function checkOut() {
             })
 
             
-    // await  axios.post('http://localhost:5000/exportTicket/',{
-    //     extraArray : extraArray,
-    //     ProdName : prodName,
-    //     ProdPrice : prodPrice,
-    //     quantity : quantity,
-    //     servTable : servTable,
-    //     promoCode : codePromo,
-    //     fidelCode : newPin,
-    //     totalPrice : reducedPrice
-        
-
-    // }).then(response=>{
-    //     console.log(response);
-    // })
+            exportTicket(extraArray,prodName,prodPrice,quantity,servTable,codePromo,fidelCode,reducedPrice)
 
 
 
@@ -190,7 +180,7 @@ async function checkOut() {
 
         await  axios.patch('http://localhost:5000/cardfidele/'+fidelObj.id,{
             
-            points : fidelObj.reduction+points
+            points : fidelObj.points+points
         }).then(response=>{
             console.log(response);
         })
@@ -209,21 +199,7 @@ async function checkOut() {
             console.log(response);
         })
 
-        // await  axios.post('http://localhost:5000/exportTicket/',{
-        //     extraArray : extraArray,
-        //     ProdName : prodName,
-        //     ProdPrice : prodPrice,
-        //     quantity : quantity,
-        //     servTable : servTable,
-        //     promoCode : codePromo,
-        //     fidelCode : fidelCode,
-        //     totalPrice : reducedPrice
-            
-
-        // }).then(response=>{
-        //     console.log(response);
-        // })
-
+        exportTicket(extraArray,prodName,prodPrice,quantity,servTable,codePromo,fidelCode,reducedPrice)
 
     }
 
@@ -285,6 +261,68 @@ async function checkFidele() {
     })
 
     return fideleObject
+}
+
+function exportTicket(extraArray,prodName,prodPrice,quantity,servTable,codePromo,fidelCode,reducedPrice){
+   
+    const ticket = new PDFDocument();
+        ticket.pipe(fs.createWriteStream("./ticket/ticket.pdf"));
+        ticket.image('./ticket/logo.png', 250, 100, {fit: [100, 100]})
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.moveDown()
+        ticket.fontSize(18)
+              .text("--------------------------------",{ align: "center" })
+        ticket.moveDown()
+        ticket.fontSize(18)
+              .text("Ticket de votre commande",{ align: "center" })
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Article : "+prodName+" : "+prodPrice+" DH")
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Supplémentaire :")
+        ticket.moveDown()
+        for (let index = 0; index < extraArray.length; index++) {
+            ticket.fontSize(15)
+              .text(extraArray[index].extraName+" : "+extraArray[index].extraPrice+" DH x"+extraArray[index].extraQuantity)
+            
+        }
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Quantité : "+quantity)
+              ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Numéro de service à table : "+servTable)
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Code Promo : "+codePromo)
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("Code fidélité : "+fidelCode)
+        ticket.moveDown()
+        ticket.fontSize(15)
+              .text("--------------------------------",{ align: "center" })
+        ticket.moveDown()
+        ticket.fontSize(25)
+              .text(reducedPrice+" DH",{ align: "center" })
+        ticket.moveDown()
+        ticket.fontSize(15)
+        .text("--------------------------------",{ align: "center" })
+        ticket.moveDown()
+        ticket.fontSize(15)
+        .text("Merci Pour Votre Visite , à bientot",{ align: "center" })
+        ticket.moveDown()
+
+        
+        ticket.end();
+
 }
 
 
