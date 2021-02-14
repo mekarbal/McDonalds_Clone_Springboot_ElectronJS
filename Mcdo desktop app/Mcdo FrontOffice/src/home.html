@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style/style.css">
+    <title>BORNE DE COMMANDE | HOME</title>
+</head>
+<body onload="translate()">
+    <a href="#payment">
+        <div class="home">
+                <div>
+                    <button onclick="getLang('fr')" style="background: none; border: none; outline: none;">
+                        <img src="./img/fr.png" alt="">
+                    </button>
+                    <button onclick="getLang('en')" style="background: none; border: none; outline: none;">
+                        <img src="./img/en.png" alt="">
+                    </button>
+                    <button onclick="getLang('ar')" style="background: none; border: none; outline: none;">
+                        <img src="./img/ar.png" alt="">
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </a>
+
+
+
+     <div class="container-fluid location d-flex flex-column align-items-center justify-content-center" id="payment">
+        
+
+        <div class="row">
+            <h1 class="lang" key="payement"></h1>
+        </div>
+        <div class="row dinning-opt d-flex justify-content-around" id="pay">
+            <a href="#location" class="col-sm-4 pay-opt d-flex align-items-center justify-content-center">
+                <h3 class="lang" key="cash"></h2>
+            </a>
+            <a class="col-sm-4 pay-opt d-flex  align-items-center justify-content-center flex-column">
+                <h3 class="lang" key="cc" style="margin: 0; padding: 0;"></h2>
+                <p style="margin: 0; padding: 0; color: red;">*Unavailable</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="container-fluid location d-flex flex-column align-items-center justify-content-around" id="location">
+        <a href="#payment" class="return lang" key="back"></a>
+        <div class="row">
+            <h1 class="din-loc-title lang" key="dining"></h1>
+        </div>
+        <div class="row dinning-opt d-flex justify-content-around">
+            <a href="category.html?loc=in" class="col-sm-4 card-opt d-flex flex-column align-items-center justify-content-around">
+                    <img src="./img/icon1.png" alt="">
+                    <h2 class="lang" key="in"></h2>
+            </a>
+            <a href="category.html?loc=out" class="col-sm-4 card-opt d-flex flex-column align-items-center justify-content-around">
+                    <img src="./img/icon2.png" alt="">
+                    <h2 class="lang" key="out"></h2>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./script/trasnlation.js"></script>
+</body>
+</html>

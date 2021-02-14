@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body{
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+/*----------Scrollbar Syle-------------*/
+
+/* body::-webkit-scrollbar {
+    width: 0.9rem;
+    border-radius: 10rem;
+    background: transparent;
+  }
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+
+body::-webkit-scrollbar-thumb {
+    border: 0.2rem solid rgb(179, 179, 179);
+    margin-right: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.8rem;
+  } */
+
+
+
+/* HOME PAGE CSS */
+
+.home{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home div{
+    height: 65%;
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.home div img{
+    height: 70px;
+    width: auto;
+}
+
+.location{
+    height: 100vh;
+    width: 100%;
+    background-color: #1C4018;
+    position: relative;
+}
+
+.location .row h1{
+    color: #D0E1D9;
+
+}
+
+.dinning-opt{
+    width: 70%;
+}
+
+
+.card-opt{
+    height: 500px;
+    width: 350px;
+    background-color:#D0E1D9;
+    border-radius: 40px;
+    -webkit-box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+    box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+}
+
+.card-opt h2{
+    color: #1C4018;
+}
+.pay-opt{
+    height: 70px;
+    width: 500px;
+    background-color:#D0E1D9;
+    border-radius: 40px;
+    -webkit-box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+    box-shadow: 10px 10px 31px -1px rgba(0,0,0,1);
+    margin: 200px 0;
+}
+
+.pay-opt h3{
+    color: #1C4018;
+}
+
+.location .return{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    color:  #1C4018;
+    background-color: #D0E1D9;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    -webkit-box-shadow: 10px 10px 20px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 20px -1px rgba(0,0,0,1);
+    box-shadow: 10px 10px 20px -1px rgba(0,0,0,1);
+}
+
+.din-loc-title{
+    letter-spacing: 7px;
+}
+
+/* COMMANDE PAGE CSS */
+
+.top-bar{
+    height: 250px;
+    width: 100%;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: bottom;
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, 
+    from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+.mc-logo{
+    height: 240px;
+    width: 270px;
+    border-radius: 20px;
+    background-color: #1C4018;
+}
+
+.mc-logo img{
+    height: 150px;
+    width: auto;
+}
+
+.rec-prod{
+    height: 200px;
+    width: 230px;
+
+}
+
+.rec-prod img{
+    height: 150px;
+    width: auto;
+}
+
+.com-title{
+    height: 240px;
+}
+
+.com-title h1{
+    font-size: 4em;
+    font-family: "Potta One";
+   
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    right: 0;
+    color:  #D0E1D9;
+    background-color: #1C4018;
+    padding: 15px 40px;
+    border-radius: 10px;
+    font-weight: bold;
+    -webkit-box-shadow: 5px 5px 10px -1px rgba(0,0,0,1);
+    -moz-box-shadow: 5px 5px 10px -1px rgba(0,0,0,1);
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,1);
+   
+}
+ .back:hover{
+     color: white;
+ }
+
+
+
+.categ img{
+    height: 270px;
+    width: auto;
+}
+
+.categ a{
+    color: #1C4018;
+    transition: 0.5s;
+    margin: 60px 0;
+   
+    
+}
+
+.price{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+    background-color: #F1D900;
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+#extra p{
+    font-size: 25px;
+}
+
+.extraname{
+    font-size: 30px;
+}
+
+.extraBtn{
+    width: 200px;
+}

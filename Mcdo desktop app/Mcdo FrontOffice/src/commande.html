@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>BORNE DE COMMANDE | COMMANDE</title>
+</head>
+
+<body onload="translate()">
+    <div class="top-bar"></div>
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-md-3 d-flex flex-column align-items-center">
+                <div class="mc-logo d-flex justify-content-center align-items-center">
+                    <img src="./img/mclogo.png" alt="" />
+                </div>
+                <div id="randprod" class="d-flex flex-column align-items-center"></div>
+            </div>
+            <div class="col-md-8" style="position: relative">
+                <a href="home.html" class="back lang" id="lang" key="back"></a>
+                <div class="row com-title d-flex align-items-center">
+                    <h1 id="productName"></h1>
+                </div>
+                <div class="row categ d-flex justify-content-center" id="oneProduct"></div>
+                <div class="row">
+                <div class="col"></div>
+                </div>
+                <div id="extra"></div>
+                <div class="row text-center">
+                    <div class="col-2"><label for="" class="lang" key="extra"></label></div>
+                    <div class="col"><select class="form-control" id="supp"></select></div>
+                    <div class="col-1"><input type="text" id="extraQ" class="form-control" value="1"></div>
+                    <div class="col"><button onclick="getExtras()" class="btn btn-success lang" key="addExtra"></button></div>
+
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-2"><label for="" class="lang" key="prodQuantity"></label></div>
+                    <div class="col-1"><input type="number" id="quantity" class="form-control" value="1"></div>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-2"><label for="" class="lang" key="tableServ"></label></div>
+                    <div class="col-1"><select class="form-control" name="" id="ServTable">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select></div>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-2"><label for="" class="lang" key="promoCode">Code Promo : </label></div>
+                    <div class="col-4"><input type="text" id="codePromo" class="form-control" ><p id="promoValid"></p></div>
+                    <div class="col"><button onclick="checkPromo()" class="btn btn-success lang" key="check"></button></div>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col-2"><label for="" class="lang" key="fideleCode"> </label></div>
+                    <div class="col-4"><input type="text" id="carteF" class="form-control" ><p id="fideleValid"></p></div>
+                    <div class="col"><button onclick="checkFidele()" class="btn btn-success lang" key="check"></button></div>
+                </div>
+                <div class="row text-center mt-5">
+                    <div class="col"><button onclick="checkOut()" class="btn btn-primary" data-mdb-toggle="modal"
+                        data-mdb-target="#exampleModal">Check out</button></div>
+                </div>
+                
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+<div
+class="modal fade"
+id="exampleModal"
+tabindex="-1"
+aria-labelledby="exampleModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title lang" id="exampleModalLabel" key="congrats"></h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-mdb-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body lang" key="effectuer"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary lang" key="close" data-mdb-dismiss="modal" onclick="window.location.href = 'home.html'">
+        Close
+      </button>
+     
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.2.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./script/randprod.js"></script>
+    <script src="./script/commande.js"></script>
+    <script src="./script/trasnlation.js"></script>
+</body>
+
+</html>

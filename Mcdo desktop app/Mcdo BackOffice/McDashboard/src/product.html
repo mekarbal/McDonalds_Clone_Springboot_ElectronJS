@@ -1,0 +1,217 @@
+
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McDonald | Admin Dashboard</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="./assets/style/style.css">
+  </head>
+  <body>
+     
+  
+
+    <header class="top-menu">
+        <span class="nav-text">
+
+        McDonald | Admin Dashboard
+
+        </span>
+    </header>
+
+
+    
+
+    <div class="container area">
+        <div class="row mt-5 mb-5 justify-content-center text-center">
+            <h1 class="font-weight-bold">
+                PRODUCT MANAGEMENT
+            </h1>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-5 postForms text-center p-5">
+                <h4 class="font-weight-bold">ADD/UPDATE PRODUCT</h4>
+                <div class="form-outline mt-5 mb-3">
+                    <label class="form-label" >Product name</label>
+                    <input type="text" id="prodName" class="form-control" required />
+                  </div>
+                  <div class="form-outline mb-2">
+                    <label class="form-label" >Product Image</label>
+                    <input type="text" id="prodImg" class="form-control"  required />
+                  </div>
+                  <div class="form-outline mb-2">
+                    <label class="form-label" >Product Price</label>
+                    <input type="text" id="prodPrice" class="form-control"  required />
+                  </div>
+                  <div class="form-outline mb-2">
+                    <label class="form-label" >Subcategory</label>
+                    <select id="subCatSelect" class="form-control">
+                        
+                    </select>
+                  </div>
+                  <div class="form-outline mb-2">
+                    <label class="form-label" >Ingredient</label>
+                    <select id="ingSelect" class="form-control">
+                        
+                    </select>
+                  </div>
+
+
+                  <button type="button" class="btn btn-success" onclick="addProduct()">Add</button>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <table id="dtBasicExample" class="table  table-bordered table-sm table-responsive-xl table-hover" cellspacing="0" width="100%">
+                <thead class="black white-text">
+                <tr class="text-center">
+                    <th class="th-sm">Name
+                    </th>
+                    <th class="th-sm">Image
+                    </th>
+                    <th class="th-sm">Price (DH)
+                    </th>
+                    <th class="th-sm">Action
+                    </th>
+                </tr>
+                </thead>
+                <tbody id="myTbody">
+                   
+                </tbody>
+        </table>
+        </div>
+
+    </div>
+    
+
+
+
+  
+  
+  
+  
+  <nav class="main-menu">
+            <ul>
+            <li>
+                    <a href="category.html">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            McDonald | Admin Dashboard
+                        </span>
+                    </a>
+                  
+                </li>
+
+                
+
+                <li class="has-subnav">
+                    <a href="category.html">
+                      <i class="fas fa-folder"></i>
+                        <span class="nav-text">
+                            Category
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="subcategory.html">
+                       
+                        <i class="fas fa-folder-open"></i>
+                        <span class="nav-text">
+                            Subcategory
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="product.html">
+                      <i class="fab fa-product-hunt"></i>
+                        <span class="nav-text">
+                            Product
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="ingredient.html">
+                        <i class="fas fa-folder-plus"></i>
+                        <span class="nav-text">
+                            Ingredient
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="promocode.html">
+                      <i class="fas fa-percent"></i>
+                        <span class="nav-text">
+                            Promo Code
+                        </span>
+                    </a>
+
+                </li>
+                <li class="has-subnav">
+                    <a href="commande.html">
+                      <i class="fas fa-shopping-basket"></i>
+                        <span class="nav-text">
+                            Commande
+                        </span>
+                    </a>
+
+                </li>
+              
+            </ul>
+
+           
+        </nav>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="./script/product.js"></script>
+  </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--       _
+       .__(.)< (SKETCH)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~-->
